@@ -11,7 +11,7 @@ L=L[4] # a specific example to help guess. The above guesses seem to work pretty
 eta=eta0*L*exp(-eta1*L)#just as in 
 dE = function(t, E, parms) {# Next line shows the slope as a sum of two terms, NTE+TE. NTE=eta*X*(1-exp(-t/d0))^(X-1)*(exp(-t/d0)/d0)
   list(eta*X*(1-exp(-t/d0))^(X-1)*(exp(-t/d0)/d0)+(K*P0/L+K*P1+alph*(1-P0-P1*L))*(1+C*E))# big advantage to just add slopes
-}
+} #something wrong with this line
 yini = 0
 #need small dose step size near zero where dE varies rapidly; cannot include dose=0 where dE=infinity
 dose=c(as.vector(t(c(1e-12,1e-11,1e-10,1e-9,1e-8,1e-7,1e-6,1e-5,1e-4,1e-3)%o%1:9)))# is there a better way to do this? RKS
